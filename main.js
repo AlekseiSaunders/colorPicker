@@ -24,6 +24,27 @@ schemeP.addEventListener('change', () => {
   }
 });
 
+let createColorArticles = function (data) {
+  for (let i = 0; i < 6; i++) {
+    let color_article = document.createElement('article');
+    color_article.classList.add('color__box');
+    color_article.style.backgroundColor = `${data.colors[i].hex.value}`;
+    colorSection.appendChild(color_article);
+  }
+};
+
+let createTextArticles = function (data) {
+  for (let i = 0; i < 6; i++) {
+    let text_article = document.createElement('article');
+    text_article.classList.add('color__text');
+    text_article.innerText = `
+          ${data.colors[i].hex.value}
+					${data.colors[i].name.value}
+        `;
+    textSection.appendChild(text_article);
+  }
+};
+
 submitBtn.addEventListener('click', () => {
   textSection.innerHTML = '';
   colorSection.innerHTML = '';
@@ -36,18 +57,7 @@ submitBtn.addEventListener('click', () => {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      for (let i = 0; i < 6; i++) {
-        let text_article = document.createElement('article');
-        let color_article = document.createElement('article');
-        text_article.classList.add('color__text');
-        color_article.classList.add('color__box');
-        color_article.style.backgroundColor = `${data.colors[i].hex.value}`;
-        text_article.innerText = `
-          ${data.colors[i].hex.value}
-					${data.colors[i].name.value}
-        `;
-        textSection.appendChild(text_article);
-        colorSection.appendChild(color_article);
-      }
+      createColorArticles(data);
+      createTextArticles(data);
     });
 });
