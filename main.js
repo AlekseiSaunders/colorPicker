@@ -25,7 +25,7 @@ schemeP.addEventListener('change', () => {
 });
 
 let createColorArticles = function (data) {
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < user_count; i++) {
     let color_article = document.createElement('article');
     color_article.classList.add('color__box');
     color_article.style.backgroundColor = `${data.colors[i].hex.value}`;
@@ -34,7 +34,7 @@ let createColorArticles = function (data) {
 };
 
 let createTextArticles = function (data) {
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < user_count; i++) {
     let text_article = document.createElement('article');
     text_article.classList.add('color__text');
     text_article.innerText = `
