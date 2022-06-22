@@ -1,0 +1,19 @@
+body,
+html {
+  height: 100%;
+}
+header,
+body {
+  width: 95%;
+  margin: 0 auto;
+}
+.headerNav {
+  margin: 30px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.headerNav * {
+  margin: 10px;
+}
