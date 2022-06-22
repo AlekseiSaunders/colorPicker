@@ -6,7 +6,6 @@ header,
 body {
   width: 95%;
   margin: 0 auto;
-  outline: solid red 1px;
 }
 .headerNav {
   margin: 30px auto;
@@ -37,5 +36,9 @@ body {
 .color__text {
   padding-top: 10px;
   width: 150px;
-line-height: 1.5rem;;
+  line-height: 1.5rem;
+}
+#color-picker {
+  width: 75px;
+  height: 50px;
 }
