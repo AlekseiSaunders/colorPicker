@@ -6,14 +6,35 @@ header,
 body {
   width: 95%;
   margin: 0 auto;
+  outline: solid red 1px;
 }
 .headerNav {
   margin: 30px auto;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 .headerNav * {
   margin: 10px;
+}
+.color__wrapper {
+  display: flex;
+  justify-content: center;
+}
+.text__wrapper {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.color__box {
+  outline: solid black;
+  height: 75vh;
+  width: 150px;
+}
+
+.color__text {
+  padding-top: 10px;
+  width: 150px;
 }
