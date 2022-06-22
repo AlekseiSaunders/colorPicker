@@ -2,19 +2,23 @@ const colorP = document.getElementById('color-picker');
 const userColorDis = document.getElementById('userColor');
 const schemeP = document.getElementById('scheme-select');
 const userSchemeDis = document.getElementById('userScheme');
-const baseURL =  'https://www.thecolorapi.com/scheme?'
+const submitBtn = document.getElementById('create-scheme__btn');
+const baseURL = 'https://www.thecolorapi.com/scheme?';
+let user_color = '#000000';
+let user_scheme = 'monochrome';
 
 colorP.addEventListener('input', () => {
-  let user_color = colorP.value;
-  userColorDis.innerHTML = `
-		<h1>User Color is: ${user_color}</h1>
-`;
+  user_color = colorP.value;
 });
 
 schemeP.addEventListener('change', () => {
-  let user_scheme = schemeP.value;
-  userSchemeDis.innerHTML = `
-   <h2>User Scheme is: ${user_scheme.toUpperCase()}</h2>
-`;
+  user_scheme = schemeP.value;
 });
 
+submitBtn.addEventListener('click', () => {
+  let url = baseURL + `hex=${user_color.slice(1)}` + `&mode=${user_scheme}` + `&count=6`;
+  console.log(url);
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+});
