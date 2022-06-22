@@ -53,7 +53,6 @@ submitBtn.addEventListener('click', () => {
     `hex=${user_color.slice(1)}` +
     `&mode=${user_scheme}` +
     `&count=${user_count}`;
-  console.log(url);
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
