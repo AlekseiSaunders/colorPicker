@@ -37,11 +37,21 @@ let createTextArticles = function (data) {
   for (let i = 0; i < user_count; i++) {
     let text_article = document.createElement('article');
     text_article.classList.add('color__text');
-    text_article.innerText = `
-          ${data.colors[i].hex.value}
+    text_article.innerHTML = `
+          <span>${data.colors[i].hex.value}</span></br>
 					${data.colors[i].name.value}
         `;
     textSection.appendChild(text_article);
+    text_article.onclick = function () {
+      document.execCommand('copy');
+    };
+    text_article.addEventListener('copy', function (event) {
+      event.preventDefault();
+      if (event.clipboardData) {
+        event.clipboardData.setData('text/plain', data.colors[i].hex.value);
+        console.log(event.clipboardData.getData('text'));
+      }
+    });
   }
 };
 
