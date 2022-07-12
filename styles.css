@@ -1,3 +1,32 @@
+:root[color-mode='light'] {
+  --surface1: 0 0% 90% / 1;
+  --surface2: 0 0% 95% / 1;
+  --surface3: 0 0% 100% / 1;
+  --element1: 0 0% 7% / 1;
+  --element2: 0 0% 13% / 1;
+  --element3: 0 0% 20% / 1;
+  --elementInverse: 0 0% 93% / 1;
+  --accentLine: 0 0% 80% / 1;
+}
+
+:root[color-mode='dark'] {
+  --surface1: 0 0% 15% / 1;
+  --surface2: 0 0% 20% / 1;
+  --surface3: 0 0% 25% / 1;
+  --element1: 0 0% 93% / 1;
+  --element2: 0 0% 87% / 1;
+  --element3: 0 0% 80% / 1;
+  --elementInverse: 0 0% 7% / 1;
+  --accentLine: 0 0% 30% / 1;
+}
+
+:root[color-mode='light'] .light-hidden {
+  display: none;
+}
+
+:root[color-mode='dark'] .dark-hidden {
+  display: none;
+}
 @import url('https://fonts.googleapis.com/css2?family=Fascinate&family=Oxygen:wght@400;700&display=swap');
 body,
 html {
@@ -6,6 +35,8 @@ html {
 }
 body {
   margin: 0 auto;
+  background-color: hsla(var(--surface3));
+  color: hsla(var(--element3));
 }
 h1 {
   font-size: 2rem;
@@ -18,7 +49,8 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(211, 207, 198);
+  background-color: hsla(var(--surface1));
+  color: hsla(var(--element1));
 }
 .selectors {
   padding-top: 20px;
@@ -42,7 +74,7 @@ h1 {
 }
 
 .color__box {
-  outline: solid black 1px;
+  outline: solid hsla(var(--element1)) 1px;
   height: 60vh;
   width: 150px;
 }
@@ -68,6 +100,7 @@ section {
   width: 50%;
   margin: auto;
 }
+
 @media (max-width: 1400px) {
   .selectors {
     flex-direction: column;
