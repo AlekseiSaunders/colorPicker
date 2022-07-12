@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" color-mode="light">
 
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
 	<title>Color Picker ala Scrimba module #9 class #23</title>
 </head>
 <header>
@@ -27,6 +31,12 @@
 				</select>
 			</label>
 			<button id="create-scheme__btn">Get Color Scheme</button>
+			<button class="color-mode__btn light-hidden" aria-label="Toggle light mode"><span
+					class="material-symbols-outlined">
+					light_mode
+				</span></button>
+			<button class="color-mode__btn dark-hidden" aria-label="Toggle dark mode"><span
+					class="material-symbols-outlined">dark_mode</span></button>
 		</section>
 	</nav>
 </header>
@@ -37,6 +47,8 @@
 	<section class="text__wrapper">
 	</section>
 	<script src="main.js"></script>
+	<script src="color_mode.js"></script>
+	<script src="check_color_prefs.js"></script>
 </body>
 
 </html>
